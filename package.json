@@ -1,0 +1,13 @@
+{
+  "name": "red-robot",
+  "private": true,
+  "description": "Red Robot: a brutalist 3D mascot built entirely from a Blender Python script, with 9 web-ready animations.",
+  "scripts": {
+    "build": "flatpak run org.blender.Blender -b --factory-startup --python \"$PWD/scripts/build_robot.py\" && npm run optimize",
+    "optimize": "gltf-transform resample export/red-robot.glb export/red-robot.web.glb && gltf-transform prune export/red-robot.web.glb export/red-robot.web.glb && gltf-transform dedup export/red-robot.web.glb export/red-robot.web.glb && gltf-transform quantize export/red-robot.web.glb export/red-robot.web.glb",
+    "inspect": "gltf-transform inspect export/red-robot.web.glb"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "4.2.1"
+  }
+}

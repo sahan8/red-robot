@@ -1,0 +1,6 @@
+node_modules
+*.blend1
+renders/reel/
+renders/sheet/
+renders/p*.png
+renders/close.png
